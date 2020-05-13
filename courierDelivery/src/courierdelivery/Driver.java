@@ -6,6 +6,7 @@
 package courierdelivery;
 
 import java.util.Comparator;
+import java.util.Objects;
 
 /**
  *
@@ -22,6 +23,13 @@ public class Driver implements Comparable<Driver>{
         this.name = name;
         this.numberParcels = 0;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.name);
+        return hash;
+    }  
     
     public void incrementNumberParcels(){
         this.numberParcels ++;
